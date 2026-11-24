@@ -1,0 +1,24 @@
+# Dependencies
+node_modules
+*/node_modules
+
+# Environment files (explicitly ignored)
+.env
+backend/.env
+frontend/.env
+*.env
+*.env.*
+!.env.example
+!backend/.env.example
+!frontend/.env.example
+
+# Build artifacts
+dist
+dist/
+*/dist
+build
+build/
+
+# Local redis artifacts
+redis.zip
+redis/
