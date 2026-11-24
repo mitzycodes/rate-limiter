@@ -24,6 +24,20 @@ app.use(
 // Body parsing
 app.use(express.json());
 
+// Root health/info route
+app.get('/', (req, res) => {
+  res.json({
+    service: 'Token Bucket Rate Limiter API',
+    version: '1.0.0',
+    status: 'running',
+    endpoints: {
+      health: '/status/health',
+      keys:   '/status/keys',
+      data:   '/api/data',
+    },
+  });
+});
+
 // Mount routes
 app.use('/api', apiRoutes);
 app.use('/status', statusRoutes);
